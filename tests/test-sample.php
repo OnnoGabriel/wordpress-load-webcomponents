@@ -1,6 +1,6 @@
 <?php
 /**
- * Class SampleTest
+ * Class LoadWebComponentLibraryTest
  *
  * @package Load_Webcomponent_Library
  */
@@ -8,13 +8,30 @@
 /**
  * Sample test case.
  */
-class SampleTest extends WP_UnitTestCase {
+class LoadWebComponentLibraryTest extends WP_UnitTestCase {
 
 	/**
-	 * A single example test.
+	 * test of URL extraction from shortcode attribute
+	 * Two possible notations: src="..." or src='...'
 	 */
-	function test_sample() {
-		// Replace this with some actual testing code.
-		$this->assertTrue( true );
+	function test_load_webcomponent_extract_url() {
+		$url = load_webcomponent_extract_url('src="https://www.test.com"');
+		$this->assertEquals( 'https://www.test.com', $url );
+		$url = load_webcomponent_extract_url("src='https://www.test.com'");
+		$this->assertEquals( 'https://www.test.com', $url );
 	}
+
+	/**
+	 * test of URLs extraction from page content
+	 */
+	function test_load_webcomponent_get_webcomponent_urls() {
+		$content = 'Blablabla
+								[load-webcomponent src="https://www.test.com"]
+								[load-webcomponent src="https://www.test2.com"]
+								Blablabla';
+		$urls = load_webcomponent_get_webcomponent_urls($content);
+		$this->assertContains( 'https://www.test.com', $urls );
+		$this->assertContains( 'https://www.test2.com', $urls );
+	}
+
 }
