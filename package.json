@@ -1,6 +1,6 @@
 
 {
-  "name": "load-webcomponent-library",
+  "name": "load-webcomponents",
   "version": "0.1.0",
   "main": "Gruntfile.js",
   "author": "Onno Gabriel",
