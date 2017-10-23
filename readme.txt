@@ -15,12 +15,13 @@ WordPress plugin for loading web components and other JavaScript libraries via s
 
 Dynamically load web components or JavaScript libraries to any post or page on your WordPress website.
 
-Just add a shortcode to the content of a post or a page, for which you want to load a web component or javascript library. The shortcode can be called with an URL or with an identifier of the component:
+Just add a shortcode to the content of a post or a page, for which you want to load a web component or JavaScript library.
+The shortcode can be called with an URL or with the name of the component:
 
 * `[load-webcomponent src="<url>"]`
 * `[load-webcomponent name="<identifier>"]`
 
-The corresponding URLs for each identifier can be set on the settings page. You will find the settings page in the Settings menu in your administration area.
+The corresponding URLs for each name can be set on the settings page. You will find the settings page in the Settings menu in your administration area.
 
 = Support =
 
@@ -46,14 +47,20 @@ Please have a look at the [Github repo](https://github.com/OnnoGeorg/wordpress-l
 
 == Screenshots ==
 
-1. Settings page, where identifiers and URLs of web components or javascript libraries are defined.
+1. Settings page, where identifiers and URLs of web components or JavaScript libraries are defined.
 
 == Changelog ==
+
+= 0.1.1 =
+* Typos and update of Readme file
 
 = 0.1.0 =
 * Initial release.
 
 == Upgrade Notice ==
+
+= 0.1.1 =
+* Typos and update of Readme file
 
 = 0.1.0 =
 * Initial release.
