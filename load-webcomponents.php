@@ -1,22 +1,35 @@
 <?php
 /**
  * Plugin Name:     Load Web Components
- * Plugin URI:      https://www.datacodedesign.de/wordpress-plugin-load-webcomponents
+ * Plugin URI:      https://github.com/OnnoGeorg/wordpress-load-webcomponents
  * Description:     Loads web components triggered by shortcodes in posts and pages
  * Author:          Onno Gabriel
  * Author URI:      https://www.datacodedesign.de
- * Text Domain:     load-webcomponents
+ * Text Domain:     load_webcomponents
  * Domain Path:     /languages
- * Version:         0.1.0
+ * Version:         0.1.1
  *
  * @package         Load_Webcomponents
  */
 
+ // If this file is accessed diretcly, then abort.
+ if ( ! defined( 'ABSPATH' ) ) {
+     exit;
+ }
 
 /***
  * Plugin administration
  */
 if ( is_admin() ) {
+
+	function load_webcomponents_load_textdomain() {
+		load_plugin_textdomain(
+			'load_webcomponents',
+			false,
+			basename( dirname( __FILE__ ) ) . '/languages'
+		);
+	}
+	add_action( 'init', 'load_webcomponents_load_textdomain' );
 
 	// Add settings link to plugins list
 	function load_webcomponents_settings_link( $links ) {
@@ -35,9 +48,9 @@ if ( is_admin() ) {
 
 
 /***
- * Dummy shortcode add.
+ * Dummy shortcode addition.
  * The short codes is not processed the standard way within the content,
- * but in page header via wp_head hook.
+ * but in the page header via wp_head hook.
  */
 function load_webcomponents_dummy( $atts ) {}
 add_shortcode( 'load-webcomponent', 'load_webcomponents_dummy' );

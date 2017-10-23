@@ -1,0 +1,136 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: load-webcomponents\n"
+"POT-Creation-Date: 2017-10-23 11:16+0200\n"
+"PO-Revision-Date: 2017-10-23 11:17+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: load-webcomponents.php:36 load-webcomponents_admin.php:19
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: load-webcomponents_admin.php:27
+msgid "Enable loading"
+msgstr "Laden aktivieren"
+
+#: load-webcomponents_admin.php:39
+msgid "Allow src attribute"
+msgstr "src-Attribut erlauben"
+
+#: load-webcomponents_admin.php:51
+msgid "List of available web components"
+msgstr "Liste verfügbarer Webkomponenten"
+
+#: load-webcomponents_admin.php:80 load-webcomponents_admin.php:91
+msgid "Incorrent option."
+msgstr "Einstellung nicht möglich."
+
+#: load-webcomponents_admin.php:126
+msgid "Item removed from list."
+msgstr "Eintrag aus der Liste entfernt."
+
+#: load-webcomponents_admin.php:136
+msgid "Please enter name <em>and</em> URL for the new web component."
+msgstr ""
+"Bitte einen Namen <em>und</em> eine URL für diese Webkomponente eingeben."
+
+#: load-webcomponents_admin.php:153
+#, php-format
+msgid "Name \"%s\" is not unique!"
+msgstr "Der Name \"%s\" ist nicht eindeutig!"
+
+#: load-webcomponents_admin.php:180
+msgid ""
+"This is the main switch to (de)activate all web component loaded by this "
+"plugin."
+msgstr ""
+"Dies ist der Hauptschalter mit dem das Laden von Webkomponenten "
+"(de)aktiviert wird."
+
+#: load-webcomponents_admin.php:199
+msgid ""
+"Allow to add web components via the <code>src=\"&lt;url&gt;\"</code> "
+"attribute."
+msgstr ""
+"Das Laden vom Webkomponenten über das <code>src=\"&lt;url&gt;\"</code>-"
+"Attribute erlauben."
+
+#: load-webcomponents_admin.php:202
+msgid ""
+"Standard and recommended method is to identify a component by its identifier "
+"and define the URL in the list below."
+msgstr ""
+"Die empfohlene Methode ist, eine Webkomponente über ihren Namen zu laden und "
+"die URL über die Liste unten zu definieren."
+
+#: load-webcomponents_admin.php:223
+msgid "#"
+msgstr "#"
+
+#: load-webcomponents_admin.php:224
+msgid "Identifier"
+msgstr "Name"
+
+#: load-webcomponents_admin.php:225
+msgid "URL"
+msgstr "URL"
+
+#: load-webcomponents_admin.php:240
+msgid "New"
+msgstr "Neu"
+
+#: load-webcomponents_admin.php:247
+msgid ""
+"To delete an item from the list, just delete the identifier and/or URL of "
+"the item"
+msgstr ""
+"Um einen Eintrag aus der Liste zu löschen, einfach den Namen und/oder die "
+"URL löschen."
+
+#: load-webcomponents_admin.php:305
+msgid "Usage"
+msgstr "Verwendung"
+
+#: load-webcomponents_admin.php:306
+msgid ""
+"Load a web component or JavaScript library to a post or page just by adding "
+"a shortcode to the content. There are two types of shortcodes available:"
+msgstr ""
+"Laden von Webcomponenten oder JavaScript-Bibliotheken in einem Beitrag oder "
+"einer Seite über das Hinzufügen eines Shortcodes. Zwei Arten von Shortcodes "
+"sind verfügbar:"
+
+#: load-webcomponents_admin.php:309
+#, php-format
+msgid "where %s is the URL of the web component or JavaScript library."
+msgstr "wobei %s die URL der Webkomponente bzw. JavaScript-Bibliothek ist."
+
+#: load-webcomponents_admin.php:312
+#, php-format
+msgid ""
+"where %s is the name of the web component and the URL is taken from the list "
+"below."
+msgstr ""
+"wobei %s die Name der Webkomponente ist und die URL aus der unten stehenden "
+"Liste entnommen wird."
+
+#: load-webcomponents_admin.php:315
+msgid ""
+"The type with <code>name=\"&lt;identifier&gt;</code> is recommended, because "
+"if the URL of a component changes, it has be changed only on this settings "
+"page, and not on each post or page using the component."
+msgstr ""
+"Shortcodes mit  <code>name=\"&lt;identifier&gt;</code> werden empfohlen. "
+"Falls sich nämlich die URL einer Webkomponente bzw. JavaScript-Bibliothek "
+"ändert, muss diese nur hier in den Einstellungen angepasst werden und nicht "
+"auf jeder Seite bzw. in jedem Beitrag, in dem der Shortcode verwendet wird."

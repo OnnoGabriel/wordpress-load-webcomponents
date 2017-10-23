@@ -16,7 +16,7 @@ function load_webcomponents_settings_init() {
 	// Register section "Common Settings"
 	add_settings_section(
 		'load_webcomponents_settings_section_common',
-		__(' Settings', 'load_webcomponents'),
+		__('Settings', 'load_webcomponents'),
 		'load_webcomponents_settings_section_common_cb',
 		'load_webcomponents_settings_page'
 	);
@@ -48,7 +48,7 @@ function load_webcomponents_settings_init() {
 	// Register field "Web components list"
 	add_settings_field(
 		'load_webcomponents_setting_list',
-		__( 'Web components list', 'load_webcomponents' ),
+		__( 'List of available web components', 'load_webcomponents' ),
 		'load_webcomponents_setting_list_callback',
 		'load_webcomponents_settings_page',
 		'load_webcomponents_settings_section_common',
@@ -66,13 +66,7 @@ add_action( 'admin_init', 'load_webcomponents_settings_init' );
 function load_webcomponents_settings_section_common_cb( $args ) {}
 
 // Callback function for section "Web Components List"
-function load_webcomponents_settings_section_list_cb( $args ) {
-	?>
-	<p id="<?php echo esc_attr( $args['id'] ); ?>"><?php
-		esc_html_e( 'List of allowed web components:', 'load_webcomponents' );
-	?></p>
-	<?php
-}
+function load_webcomponents_settings_section_list_cb( $args ) {}
 
 /**
  * Call back function for sanitization of settings data
@@ -182,9 +176,6 @@ function load_webcomponents_setting_enable_loading_callback( $args ) {
 	<input type="checkbox" id="<?php echo $id; ?>" name="load_webcomponents_settings[<?php echo $id; ?>]" value="1" <?php
 		checked( isset($options[$id]) );
 	?> />
-	<label for="<?php echo $id; ?>"><?php
-		esc_html_e('enable loading of web components', 'load_webcomponents' );
-	?></label>
 	<p class="description">
 		<?php _e('This is the main switch to (de)activate all web component loaded by this plugin.', 'load_webcomponents' ); ?>
 	</p>
@@ -252,6 +243,9 @@ function load_webcomponents_setting_list_callback( $args ) {
 	));
 	?>
 	</table>
+	<p class="description">
+		<?php esc_html_e('To delete an item from the list, just delete the identifier and/or URL of the item', 'load_webcomponents' ); ?>
+	</p>
 	<?php
 }
 
@@ -309,12 +303,16 @@ function load_webcomponents_settings_page_html() {
 		<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
 
 		<h2><?php _e('Usage', 'load_webcomponents' ); ?></h2>
-		<p><?php _e('Load a web component to a post or page just by adding add a shortcode to the content. There are two possible options:', 'load_webcomponents' ); ?></p>
+		<p><?php _e('Load a web component or JavaScript library to a post or page just by adding a shortcode to the content. There are two types of shortcodes available:', 'load_webcomponents' ); ?></p>
 		<ol>
-			<li><code>[load-webcompontent src="&lt;url&gt;"]</code> &minus; <?php printf( __('where %s is the URL of the web component library.', 'load_webcomponents' ), '&lt;url&gt;'); ?></li>
-			<li><code>[load-webcompontent name="&lt;identifier&gt;"]</code> &minus; <?php printf( __('where %s is the name of the web component and the URL is taken from the list below.', 'load_webcomponents' ), '&lt;identifier&gt;'); ?></li>
+			<li><code>[load-webcompontent src="&lt;url&gt;"]</code> &minus; <?php
+				printf( __('where %s is the URL of the web component or JavaScript library.', 'load_webcomponents' ), '<code>&lt;url&gt;</code>');
+			?></li>
+			<li><code>[load-webcompontent name="&lt;identifier&gt;"]</code> &minus; <?php
+				printf( __('where %s is the name of the web component and the URL is taken from the list below.', 'load_webcomponents' ), '<code>&lt;identifier&gt;</code>');
+			?></li>
 		</ol>
-		<p><?php _e('The secont option is recommended. If the URL of a component changes, it has be changed only on this settings page, and not on each post or page using the component.', 'load_webcomponents' ); ?></p>
+		<p><?php _e('The type with <code>name="&lt;identifier&gt;</code> is recommended, because if the URL of a component changes, it has be changed only on this settings page, and not on each post or page using the component.', 'load_webcomponents' ); ?></p>
 		<br />
 		<br />
 
